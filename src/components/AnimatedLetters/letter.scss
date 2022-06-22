@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+.color-hover {
+  color: #fff;
+  transition: all 1.5s linear;
+
+  &:hover {
+    color: #ffd700;
+    transition: all 0s linear;
+  }
+}
+
+.text-animate {
+  display: inline-block;
+  opacity: 0;
+  animation: bounceIn 1s 1s;
+  animation-fill-mode: forwards;
+  min-width: 10px;
+}
+
+.text-animate-hover {
+  min-width: 10px;
+  display: inline-block;
+  opacity: 1;
+}
+
+@for $i from 12 through 60 {
+  .text-animate._#{$i} {
+    animation-delay: #{math.div($i, 10)}s;
+  }
+}
