@@ -1,4 +1,5 @@
 @use '../../data/css_variables';
+@use 'sass:math';
 
 @mixin nav-bar($width) {
   background: #181818;
@@ -8,87 +9,61 @@
   z-index: 3;
   min-height: 500px;
   overflow-x: hidden;
+  white-space: nowrap;
 
   width: $width;
   transition: all css_variables.$nav-bar-transition-duration ease-in-out;
 
-  .menu-icon {
-    display: block;
-    text-align: center;
+  .label {
     position: absolute;
-    top: 10px;
-    height: 30px;
-    width: 100%;
-    animation: fadeIn 2s;
+    top: 50%;
+    left: 50%;
+    height: 164px;
+    width: 50px;
+    margin-top: -82px;
+    margin-left: -25px;
 
-    svg {
-      height: 30px;
-      width: 30px;
-    }
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 35px;
+    color: #ffd700;
+    opacity: 0.6;
   }
 
   nav {
     display: block;
-    text-align: center;
+    text-align: left;
     position: absolute;
-    height: 210px;
-    top: 50%;
-    margin-top: -120px;
     width: 100%;
 
-    a {
-      font-size: 22px;
-      color: #4d4d4e;
-      display: block;
-      line-height: 51px;
-      height: 51px;
-      position: relative;
-      text-decoration: none;
+    font-family: Consola;
+    font-size: 16px;
 
-      i {
-        transition: all 0.3s ease-out;
-      }
-
-      &:hover {
-        color: #ffd700;
-
-        svg {
-          opacity: 0;
-        }
-
-        &:after {
-          opacity: 1;
-        }
-      }
+    .title {
+      font-size: 20px;
+      margin: 10px 10px 5px 10px;
+      color: #aaa;
     }
 
-    a.active {
-      svg {
-        color: #ffd700;
-      }
+    .directory {
+      margin-left: 20px;
+      color: #aaa;
     }
-  }
 
-  ul {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: block;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    margin: 0;
+    .files {
+      margin-left: 24px;
 
-    li {
       a {
-        padding: 7px 0;
+        color: #aaa;
         display: block;
-        font-size: 15px;
-        line-height: 16px;
+        position: relative;
+        text-decoration: none;
+      }
 
-        &:hover {
-          color: #ffd700;
-        }
+      a.active {
+        color: #ffd700;
       }
     }
   }
@@ -97,21 +72,24 @@
 .nav-bar {
   @include nav-bar(css_variables.$nav-bar-offset);
   .menu-icon {
+    p {
+      opacity: 0;
+      transition: all 0.3s ease-in-out 0.2s;
+      visibility: hidden;
+    }
+    svg {
+      transform: rotate(0);
+      transition: all 0.1s linear;
+    }
+  }
+  .label {
     opacity: 1;
-    transform: rotate(0);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out 0.2s;
     visibility: visible;
   }
   nav {
     opacity: 0;
-    transition-delay: 0.2s;
-    transition: all 0.3s ease-in-out;
-    visibility: hidden;
-  }
-  ul {
-    opacity: 0;
-    transition-delay: 0.2s;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out 0.2s;
     visibility: hidden;
   }
 }
@@ -119,17 +97,22 @@
 .nav-bar-hover {
   @include nav-bar(css_variables.$nav-bar-offset-hovered);
   .menu-icon {
+    p {
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      visibility: visible;
+    }
+    svg {
+      transform: rotate(90deg);
+      transition: all 0.1s linear;
+    }
+  }
+  .label {
     opacity: 0;
-    transform: rotate(180deg);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     visibility: hidden;
   }
   nav {
-    opacity: 1;
-    transition: all 0.3s ease-in-out;
-    visibility: visible;
-  }
-  ul {
     opacity: 1;
     transition: all 0.3s ease-in-out;
     visibility: visible;

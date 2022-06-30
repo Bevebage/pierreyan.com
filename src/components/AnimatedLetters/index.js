@@ -6,7 +6,7 @@ const AnimatedLetters = ({ strArray, delay }) => {
     <span>
       {
         strArray.map((char, i) => (
-          <Letter letter={char} delay={delay+i} />
+          <Letter key={char + i} letter={char} delay={delay+i} />
         ))
       }
     </span>
