@@ -30,7 +30,7 @@ const Home = () => {
           </RoughNotation>
           <AnimatedLetters strArray={thirdLine_3} delay={40} />
           <br />
-          <RoughNotation type='highlight' show={true} color='#990000' animationDelay={4000} animationDuration={1800}>
+          <RoughNotation type='highlight' show={true} color='#990000' animationDelay={4300} animationDuration={1800}>
             <AnimatedLetters strArray={fourthLine} delay={43} />
           </RoughNotation>
         </h1>
