@@ -12,7 +12,7 @@
   white-space: nowrap;
 
   width: $width;
-  transition: all css_variables.$nav-bar-transition-duration ease-in-out;
+  transition: width css_variables.$nav-bar-transition-duration ease-in-out;
 
   .label {
     position: absolute;
@@ -21,7 +21,7 @@
     height: 164px;
     width: 50px;
     margin-top: -82px;
-    margin-left: -25px;
+    margin-left: -22px;
 
     writing-mode: vertical-lr;
     transform: rotate(180deg);
@@ -50,10 +50,25 @@
     .directory {
       margin-left: 20px;
       color: #aaa;
+      cursor: pointer;
+
+      svg {
+        transition: transform 0.1s linear;
+      }
+
+      .on {
+        transform: rotate(90deg);
+      }
+
+      .off {
+        transform: rotate(0);
+      }
     }
 
     .files {
       margin-left: 24px;
+      transition: all 0.1s linear;
+      overflow-x: hidden;
 
       a {
         color: #aaa;
@@ -65,23 +80,22 @@
       a.active {
         color: #ffd700;
       }
+
+      &.on {
+        height: 100%;
+        visibility: visible;
+      }
+
+      &.off {
+        height: 0;
+        visibility: hidden;
+      }
     }
   }
 }
 
 .nav-bar {
   @include nav-bar(css_variables.$nav-bar-offset);
-  .menu-icon {
-    p {
-      opacity: 0;
-      transition: all 0.3s ease-in-out 0.2s;
-      visibility: hidden;
-    }
-    svg {
-      transform: rotate(0);
-      transition: all 0.1s linear;
-    }
-  }
   .label {
     opacity: 1;
     transition: all 0.3s ease-in-out 0.2s;
@@ -96,17 +110,6 @@
 
 .nav-bar-hover {
   @include nav-bar(css_variables.$nav-bar-offset-hovered);
-  .menu-icon {
-    p {
-      opacity: 1;
-      transition: all 0.3s ease-in-out;
-      visibility: visible;
-    }
-    svg {
-      transform: rotate(90deg);
-      transition: all 0.1s linear;
-    }
-  }
   .label {
     opacity: 0;
     transition: all 0.3s ease-in-out;

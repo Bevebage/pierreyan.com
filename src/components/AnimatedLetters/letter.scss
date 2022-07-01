@@ -2,11 +2,11 @@
 
 .color-hover {
   color: #fff;
-  transition: all 1.5s linear;
+  transition: color 1.5s linear;
 
   &:hover {
     color: #ffd700;
-    transition: all 0s linear;
+    transition: color 0s linear;
   }
 }
 
