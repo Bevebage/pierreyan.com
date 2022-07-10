@@ -2,7 +2,7 @@
 @use 'sass:math';
 
 @mixin nav-bar($width) {
-  background: #181818;
+  background: #2C1320;
   height: 100%;
   position: absolute;
   top: 0;
@@ -78,7 +78,9 @@
       }
 
       a.active {
-        color: #ffd700;
+        .fileText {
+          color: #ffd700;
+        }
       }
 
       &.on {

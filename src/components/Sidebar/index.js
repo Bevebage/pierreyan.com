@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 import { faAngleRight, faFile, faFilePdf, faPlugCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,30 +7,28 @@ import { faGithub, faJsSquare, faLinkedin } from '@fortawesome/free-brands-svg-i
 
 const Directory = ({ directoryName, toggleClass, toggle }) => {
   return (
-    <div className='directory' onClick={toggle}>
-      <FontAwesomeIcon className={toggleClass} icon={faAngleRight} />
-      <span> </span>
-      {directoryName}
+    <div key={`${directoryName}_directory`} className='directory' onClick={toggle}>
+      <FontAwesomeIcon key={`${directoryName}_directory_icon`} className={toggleClass} icon={faAngleRight} />
+      <span key={`${directoryName}_directory_span`}> {directoryName}</span>
     </div>
   )
 }
 
 const File = ({ toPage, children, linkText }) => {
   return (
-    <NavLink exact='true' activeclassname='active' to={toPage}>
-      |{children}
-      <span> </span>
-      {linkText}
+    <NavLink key={`${toPage}_file_link`} exact='true' activeclassname='active' to={toPage}>
+      <span key={`${toPage}_span_pretext`}>|{children} </span>
+      <span key={`${toPage}_span_text`} className='fileText'>
+        {linkText}
+      </span>
     </NavLink>
   )
 }
 
 const Link = ({ toPage, children, linkText }) => {
   return (
-    <a target='_blank' rel='noreferrer' href={toPage}>
-      |{children}
-      <span> </span>
-      {linkText}
+    <a key={`${toPage}_link_link`} target='_blank' rel='noreferrer' href={toPage}>
+      <span key={`${toPage}_link_text`}>|{children} {linkText}</span>
     </a>
   )
 }
@@ -41,23 +39,23 @@ const Sidebar = () => {
   const sidebarFileSystem = {
     'Pages': [useState('on'),
       [
-        ['/', <FontAwesomeIcon icon={faJsSquare} color='#4d4d4e'/>, 'Home'],
-        ['/about', <FontAwesomeIcon icon={faJsSquare} color='#4d4d4e'/>, 'About'],
-        ['/projects', <FontAwesomeIcon icon={faJsSquare} color='#4d4d4e'/>, 'Projects'],
-        ['/experience', <FontAwesomeIcon icon={faJsSquare} color ='#4d4d4e'/>, 'Experience'],
-        ['/contact', <FontAwesomeIcon icon={faJsSquare} color='#4d4d4e'/>, 'Contact']
+        ['/', <FontAwesomeIcon icon={faJsSquare}/>, 'Home'],
+        ['/about', <FontAwesomeIcon icon={faJsSquare}/>, 'About'],
+        ['/projects', <FontAwesomeIcon icon={faJsSquare}/>, 'Projects'],
+        ['/experience', <FontAwesomeIcon icon={faJsSquare}/>, 'Experience'],
+        ['/contact', <FontAwesomeIcon icon={faJsSquare}/>, 'Contact']
       ]
     ],
     'Files': [useState('on'),
       [
-        ['/resume', <FontAwesomeIcon icon={faFilePdf} color='4d4d4e'/>, 'Resume'],
-        ['/transcript', <FontAwesomeIcon icon={faFilePdf} color='4d4d4e'/>, 'Transcript']
+        ['/resume', <FontAwesomeIcon icon={faFilePdf}/>, 'Resume'],
+        ['/transcript', <FontAwesomeIcon icon={faFilePdf}/>, 'Transcript']
       ]
     ],
     'Links': [useState('on'),
       [
-        ['https://www.linkedin.com/in/pierre-yan-5625a21b6/', <FontAwesomeIcon icon={faLinkedin} color='4d4d4e'/>, 'Linkedin'],
-        ['https://github.com/Bevebage/', <FontAwesomeIcon icon={faGithub} color='4d4d4e'/>, 'Github']
+        ['https://www.linkedin.com/in/pierre-yan-5625a21b6/', <FontAwesomeIcon icon={faLinkedin}/>, 'Linkedin'],
+        ['https://github.com/Bevebage/', <FontAwesomeIcon icon={faGithub}/>, 'Github']
       ]
     ]
   }
@@ -77,30 +75,36 @@ const Sidebar = () => {
         </div>
         {
           Object.entries(sidebarFileSystem).map(([key, value]) => (
-            <>
-              <Directory directoryName={key} toggleClass={value[0][0]}
+            <React.Fragment key={`${key}_fragment`}>
+              <Directory key={key} directoryName={key} toggleClass={value[0][0]}
                 toggle={() => {
-                  if (value[0][0] === 'on') {
-                    value[0][1]('off')
-                  } else {
-                    value[0][1]('on')
+                  switch (value[0][0]) {
+                    case 'on':
+                      value[0][1]('off');
+                      break;
+                    case 'off':
+                      value[0][1]('on');
+                      break;
+                    default:
+                      throw new Error()
                   }
                 }}
               />
-              <div className={`files ${value[0][0]}`}>
+              <div key={`${key}_files`} className={`files ${value[0][0]}`}>
                 {value[1].map((navLinkInfo, i) => (
-                  <>
+                  <React.Fragment key={`${key}_fragment_${navLinkInfo[0]}`}>
                     {key === 'Links' ?
-                    <Link key={i} toPage={navLinkInfo[0]} linkText={navLinkInfo[2]}>
+                    <Link key={`${key}_link_${navLinkInfo[0]}`} toPage={navLinkInfo[0]} linkText={navLinkInfo[2]}>
                       {navLinkInfo[1]}
-                    </Link> :
-                    <File key={i} toPage={navLinkInfo[0]} linkText={navLinkInfo[2]}>
-                      {navLinkInfo[1]}
+                    </Link> 
+                    :
+                    <File key={`${key}_file_${navLinkInfo[0]}`} toPage={navLinkInfo[0]} linkText={navLinkInfo[2]}>
+                      {navLinkInfo[1]} 
                     </File>}
-                  </>
+                  </React.Fragment>
                 ))}
               </div>
-            </>
+            </React.Fragment>
           ))
         }
         <div className='title'>

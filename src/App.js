@@ -25,7 +25,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />}/>
         {routes.map((route, i) => (
-          <Route path={route[0]} element={route[1]} />
+          <Route key={`${route}_${i}`} path={route[0]} element={route[1]} />
         ))}
       </Route>
     </Routes>

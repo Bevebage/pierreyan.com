@@ -1,11 +1,9 @@
 @use 'sass:math';
 
 .color-hover {
-  color: #fff;
   transition: color 1.5s linear;
 
   &:hover {
-    color: #ffd700;
     transition: color 0s linear;
   }
 }
@@ -24,7 +22,7 @@
   opacity: 1;
 }
 
-@for $i from 10 through 60 {
+@for $i from 4 through 60 {
   .text-animate._#{$i} {
     animation-delay: #{math.div($i, 10)}s;
   }

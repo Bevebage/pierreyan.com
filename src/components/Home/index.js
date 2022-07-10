@@ -17,21 +17,21 @@ const Home = () => {
     <div className='container home-page'>
       <div className='text-zone'>
         <h1>
-          <AnimatedLetters strArray={firstLine} delay={10} />
+          <AnimatedLetters strArray={firstLine} delay={4} />
           <br />
-          <AnimatedLetters strArray={secondLine_1} delay={13} />
-          <RoughNotation type='highlight' show={true} color='#A7C4B5' animationDelay={1600} animationDuration={1000}>
-            <AnimatedLetters strArray={secondLine_2} delay={16} />
+          <AnimatedLetters strArray={secondLine_1} delay={7} />
+          <RoughNotation type='highlight' show={true} color='#A7C4B5' animationDelay={1000} animationDuration={1000}>
+            <AnimatedLetters strArray={secondLine_2} delay={10} />
           </RoughNotation>
           <br />
-          <AnimatedLetters strArray={thirdLine_1} delay={24} />
-          <RoughNotation type='underline' show={true} color='#000' strokeWidth={3} animationDelay={3300} animationDuration={700}>
-            <AnimatedLetters strArray={thirdLine_2} delay={33} />
+          <AnimatedLetters strArray={thirdLine_1} delay={18} />
+          <RoughNotation type='underline' show={true} color='#000' strokeWidth={3} animationDelay={2700} animationDuration={700}>
+            <AnimatedLetters strArray={thirdLine_2} delay={27} />
           </RoughNotation>
-          <AnimatedLetters strArray={thirdLine_3} delay={40} />
+          <AnimatedLetters strArray={thirdLine_3} delay={34} />
           <br />
-          <RoughNotation type='highlight' show={true} color='#990000' animationDelay={4300} animationDuration={1800}>
-            <AnimatedLetters strArray={fourthLine} delay={43} />
+          <RoughNotation type='highlight' show={true} color='#990000' animationDelay={3700} animationDuration={1800}>
+            <AnimatedLetters strArray={fourthLine} delay={37} />
           </RoughNotation>
         </h1>
         <h2>
