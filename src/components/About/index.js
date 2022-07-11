@@ -8,6 +8,9 @@ const About = () => {
         <h1>
           <AnimatedLetters strArray={['A', 'b', 'o', 'u', 't', ' ', 'M', 'e']} delay={4}/>
         </h1>
+        <p>
+          Oops! This page is still a work in progress
+        </p>
       </div>
     </div>
   )

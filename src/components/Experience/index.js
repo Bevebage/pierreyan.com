@@ -8,6 +8,9 @@ const Experience = () => {
           <h1>
             <AnimatedLetters strArray={['M', 'y', ' ', 'E', 'x', 'p', 'e', 'r', 'i', 'e', 'n', 'c', 'e']} delay={4}/>
           </h1>
+          <p>
+          Oops! This page is still a work in progress
+        </p>
         </div>
       </div>
   )
