@@ -25,15 +25,10 @@ const cards = [
 const Experience = () => {
   const cardsRef = useRef(null)
 
-  const onWheel = e => {
-    e.preventDefault()
-
-    console.log('ping')
-
+  const onWheel = (e) => {
     let container = cardsRef.current
     let scrollPos = container.scrollLeft
     container.scrollTo({
-      top: 0,
       left: scrollPos + e.deltaY,
       behaviour: 'smooth'
     })
@@ -48,7 +43,7 @@ const Experience = () => {
         <h2>
           Scroll and Hover below to find out more.
         </h2>
-        <div className='card-cont' ref={cardsRef} onScroll={onWheel}>
+        <div className='card-cont' ref={cardsRef} onWheel={onWheel}>
           {
             cards.map((card, i) => (
               <React.Fragment key={`card_complex_${i}`}>
