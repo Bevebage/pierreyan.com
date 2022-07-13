@@ -1,0 +1,33 @@
+.experience-page {
+  .card-cont {
+    width: 200%;
+    height: 384px;
+    min-height: 100%;
+    padding: 10% 20px 20px 20px; 
+    
+    white-space: nowrap;
+    overflow-x: auto;
+
+    bottom: 0;
+
+    z-index: 1;
+
+    .card {
+      display: inline-block;
+      position: relative;
+
+      z-index: 1;
+    }
+
+    .arrow {
+      display: inline-block;
+    }
+  }
+
+  h2 {
+    // font-family: 'Coolvetica';
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
+  }
+}

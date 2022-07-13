@@ -91,7 +91,7 @@ const Sidebar = () => {
                 }}
               />
               <div key={`${key}_files`} className={`files ${value[0][0]}`}>
-                {value[1].map((navLinkInfo, i) => (
+                {value[1].map((navLinkInfo) => (
                   <React.Fragment key={`${key}_fragment_${navLinkInfo[0]}`}>
                     {key === 'Links' ?
                     <Link key={`${key}_link_${navLinkInfo[0]}`} toPage={navLinkInfo[0]} linkText={navLinkInfo[2]}>
