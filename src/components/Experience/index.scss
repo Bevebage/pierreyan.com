@@ -6,18 +6,39 @@ $circle-size: 40px;
 $icon-size: 32px;
 $bdrs-icon: 100%;
 
-$color1: #9251ac;
-$color2: #f6a4ec;
+$color1: #57467B;
+$color2: #AE8DF7;
 
-$color3: #87bbfe;
-$color4: #555ac0;
+$color3: #46B1C9;
+$color4: #035C6F;
 
-$color5: #24b47e;
-$color6: #aff1b6;
+$color5: #FFA737;
+$color6: #B56600;
+
+$color7: #A5BE00;
+$color8: #DFFC24;
+
+$color9: #7D0C0C;
+$color10: #FF4141;
+
+.wrapper {
+  height: 94vh;
+}
+
+[data-simplebar] {
+  position: absolute !important;
+  max-height: 80vh;
+  width: 60vw;
+  right: 10vw;
+}
 
 .experience-page {
+  .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    background-color: #A44A3F;
+  }   
+
   .timeline {
-    display: flex;
+    display: block;
     flex-direction: column;
     margin: $margin auto;
     position: absolute;
@@ -31,6 +52,7 @@ $color6: #aff1b6;
       border-radius: $bdrs;
       align-self: center;
       width: 50vw;
+      height: 12vh;
 
       opacity: 0;
 
@@ -55,7 +77,6 @@ $color6: #aff1b6;
             right: auto;
             z-index: -1;
             transform: translateX(-50%);
-            // animation: fillTop 2s forwards 4s ease-in-out;
           }
           &:after {
             content: "";
@@ -68,7 +89,6 @@ $color6: #aff1b6;
             top: 50%;
             left: auto;
             transform: translateY(-50%);
-            // animation: fillLeft 2s forwards 4s ease-in-out;
           }
         }
       }
@@ -135,7 +155,6 @@ $color6: #aff1b6;
           z-index: -1;
           left: 50%;
           transform: translateX(-50%);
-          // animation: fillTop 2s forwards 4s ease-in-out;
         }
         &:after {
           content: "";
@@ -147,7 +166,6 @@ $color6: #aff1b6;
           z-index: -1;
           top: 50%;
           transform: translateY(-50%);
-          // animation: fillLeftOdd 2s forwards 4s ease-in-out;
         }
       }
       &__description {
@@ -218,6 +236,69 @@ $color6: #aff1b6;
           color: $color5;
         }
       }
+
+      &--type4 {
+        &:after {
+          background: $color7;
+        }
+        .timeline__event__date {
+          color: $color8;
+          background-color: $color7;
+        }
+  
+        &:nth-child(2n + 1) {
+          .timeline__event__icon {
+            &:before,
+            &:after {
+              background: $color8;
+            }
+          }
+        }
+  
+        .timeline__event__icon {
+          background: $color8;
+          color: $color7;
+          &:before,
+          &:after {
+            background: $color8;
+          }
+        }
+        .timeline__event__title {
+          color: $color7;
+        }
+      }
+
+      &--type5 {
+        &:after {
+          background: $color9;
+        }
+        .timeline__event__date {
+          color: $color10;
+          background-color: $color9;
+        }
+  
+        &:nth-child(2n + 1) {
+          .timeline__event__icon {
+            &:before,
+            &:after {
+              background: $color10;
+            }
+          }
+        }
+  
+        .timeline__event__icon {
+          background: $color10;
+          color: $color9;
+          &:before,
+          &:after {
+            background: $color10;
+          }
+        }
+        .timeline__event__title {
+          color: $color9;
+        }
+      }
+
       &:last-child {
         .timeline__event__icon {
           &:before {
@@ -227,7 +308,7 @@ $color6: #aff1b6;
       }
     }
 
-    @for $i from 1 to 6 {
+    @for $i from 0 to 99 {
       .timeline__event {
         &._#{$i} {
           animation-name: fadeInUp;

@@ -11,7 +11,7 @@ const About = () => {
           <AnimatedLetters strArray={['A', 'b', 'o', 'u', 't', ' ', 'M', 'e']} delay={4}/>
         </h1>
         <h2>
-          I'm a second year student at Harvard University, I'm studying Computer Science / Molecular and Cellular Biology.
+          I'm a third year student at Harvard University, I'm studying Computer Science / Molecular and Cellular Biology.
         </h2>
         <p>
         I've been self-studying programming since I was 13. Having fun with my friends in the middle school library, 
