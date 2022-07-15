@@ -25,7 +25,7 @@ const About = () => {
         </p>
       </div>
       <div className='stars-cont'>
-        <div id='stars'>here</div>
+        <div id='stars'/>
         <div id='stars2'/>
         <div id='stars3'/>
         <div className="stage-cube-cont">

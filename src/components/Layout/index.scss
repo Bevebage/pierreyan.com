@@ -48,7 +48,7 @@
   top: 5%;
   margin: 0 auto;
   z-index: 1;
-  transform-style: preserve-3d;
+  // transform-style: preserve-3d;
   animation: fadeIn css_variables.$container-fadeIn-duration 
              forwards css_variables.$container-fadeIn-delay;
 }

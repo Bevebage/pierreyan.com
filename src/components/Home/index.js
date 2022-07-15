@@ -15,6 +15,9 @@ const Home = () => {
 
   return (
     <div className='container home-page'>
+      <div className='hint'>
+        Hover over the sidebar to check out other pages
+      </div>
       <div className='text-zone'>
         <h1>
           <AnimatedLetters strArray={firstLine} delay={4} />

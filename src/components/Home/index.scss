@@ -1,4 +1,12 @@
 .home-page {
+  .hint {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    transform: translateY(-50%);
+    // color: white
+  }
+
   .text-zone {
     position: absolute;
     left: 10%;
