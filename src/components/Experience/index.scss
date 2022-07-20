@@ -1,6 +1,7 @@
-$content-width: calc(40vw - 84px);
+$content-width: calc(40vw);
 $margin: 2rem;
-$spacing: 2rem;
+$spacing: 3rem;
+$padding: 2rem; 
 $bdrs: .6rem;
 $circle-size: 4rem;
 $icon-size: 3.2rem;
@@ -34,7 +35,7 @@ $color10: #FF4141;
     top: 2vh;
     width: 60vw;
     height: 80vh;
-    font-size: 17px;
+    font-size: 1.7rem;
     box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease-in;
 
@@ -85,7 +86,7 @@ $color10: #FF4141;
       &:before {
         content: "37px";
         left: 5.5rem;
-        top: 2.2rem;
+        top: 2.6rem;
       }
       
       &:after {
@@ -103,7 +104,7 @@ $color10: #FF4141;
       &:before {
         content: "23px";
         left: 1rem;
-        top: 2.2rem;
+        top: 2.6rem;
       }
 
       &:after {
@@ -121,7 +122,7 @@ $color10: #FF4141;
       &:before {
         content: "110px";
         left: 7rem;
-        top: -2rem;
+        top: -1.4rem;
       }
 
       &:after {
@@ -139,7 +140,7 @@ $color10: #FF4141;
       &:before {
         content: "120px";
         left: 3rem;
-        top: -2rem;
+        top: -1.4rem;
       }
 
       &:after {
@@ -174,7 +175,6 @@ $color10: #FF4141;
     right: 10%;
 
     &__event {
-      margin-bottom: $spacing;
       position: relative;
       display: flex;
       margin: $spacing 0;
@@ -232,13 +232,17 @@ $color10: #FF4141;
         letter-spacing: 1.5px;
       }
       &__content {
-        padding: $spacing;
-        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-          0 18px 36px -18px rgba(0, 0, 0, 0.3),
-          0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+        padding: $padding;
+        box-shadow: 0 3rem 6rem -1.2rem rgba(50, 50, 93, 0.25),
+          0 1.8rem 3.6rem -1.8rem rgba(0, 0, 0, 0.3),
+          0 -1.2rem 3.6rem -.8rem rgba(0, 0, 0, 0.025);
         background: #fff;
         width: $content-width;
         border-radius: 0 $bdrs $bdrs 0;
+
+        p {
+          font-size: 1.4rem;
+        }
       }
       &__date {
         color: $color2;
@@ -249,7 +253,7 @@ $color10: #FF4141;
         align-items: center;
         justify-content: center;
         white-space: nowrap;
-        padding: 0 $spacing;
+        padding: 0 $padding;
         border-radius: $bdrs 0 0 $bdrs;
       }
       &__icon {
@@ -257,16 +261,16 @@ $color10: #FF4141;
         align-items: center;
         justify-content: center;
         color: $color1;
-        padding: $spacing;
+        padding: $padding;
         align-self: center;
-        margin: 0 $spacing;
+        margin: 0 $padding;
         background: $color2;
         border-radius: $bdrs-icon;
         width: $circle-size;
-        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-          0 18px 36px -18px rgba(0, 0, 0, 0.3),
-          0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-        padding: 40px;
+        box-shadow: 0 3rem 6rem -1.2rem rgba(50, 50, 93, 0.25),
+          0 1.8rem 3.6rem -1.8rem rgba(0, 0, 0, 0.3),
+          0 -1.2rem 3.6rem -.8rem rgba(0, 0, 0, 0.025);
+        padding: 4rem;
         height: $circle-size;
         position: relative;
   
@@ -470,47 +474,6 @@ $color10: #FF4141;
     position: absolute;
     background-color: #9CF6F6;
     opacity: 0.3;
-  }
-}
-
-@media (max-width: 786px) {
-  .timeline__event {
-    flex-direction: column;
-    align-self: center;
-    &__content {
-      width: 100%;
-    }
-
-    &__icon {
-      border-radius: $bdrs $bdrs 0 0;
-      width: 100%;
-      margin: 0;
-      box-shadow: none;
-
-      &:before,
-      &:after {
-        display: none;
-      }
-    }
-    &__date {
-      border-radius: 0;
-      padding: $spacing;
-    }
-
-    &:nth-child(2n + 1) {
-      flex-direction: column;
-      align-self: center;
-
-      .timeline__event__date {
-        border-radius: 0;
-        padding: $spacing;
-      }
-
-      .timeline__event__icon {
-        border-radius: $bdrs $bdrs 0 0;
-        margin: 0;
-      }
-    }
   }
 }
 
