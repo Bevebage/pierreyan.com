@@ -1,9 +1,11 @@
+@use 'sass:math';
+
 .about-page {
   .text-zone {
     h2 {
       color: black;
 
-      font-size: 24px;
+      font-size: 2.5rem;
       font-weight: bold;
     }
   }
@@ -29,12 +31,12 @@
   }
 
   ul {
-    padding-top: 10px;
+    padding-top: 1rem;
     list-style-type: none;
-    line-height: 28px;
+    line-height: 2.9rem;
 
     li {
-      font-size: 20px;
+      font-size: 2.05rem;
       color: black;
       font-weight: bold;
     }
@@ -46,9 +48,9 @@
 }
 
 @function multiple-bow-shadow($n) {
-  $value: '#{random(1000)}px #{random(2000)}px #FFF';
+  $value: '#{math.div(random(550), 10)}vw #{math.div(random(2000), 10)}vh #FFF';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(1000)}px #{random(2000)}px #FFF';
+    $value: '#{$value} , #{math.div(random(550), 10)}vw #{math.div(random(2000), 10)}vh #FFF';
   }
   @return unquote($value) 
 }
@@ -67,7 +69,7 @@ $shadows-large: multiple-bow-shadow(100);
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 200vh;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -85,7 +87,7 @@ $shadows-large: multiple-bow-shadow(100);
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 200vh;
     width: 2px;
     height: 2px;
     background: transparent;
@@ -103,7 +105,7 @@ $shadows-large: multiple-bow-shadow(100);
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 200vh;
     width: 3px;
     height: 3px;
     background: transparent;
@@ -119,13 +121,13 @@ $shadows-large: multiple-bow-shadow(100);
   animation-iteration-count: infinite;
   animation-duration: 12s;
   transform-style: preserve-3d;
-  transform-origin: 100px 100px 0;
-  margin-left: calc(50% - 100px);
+  transform-origin: 10rem 10rem 0;
+  margin-left: calc(50% - 10rem);
 
   div {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 20rem;
+    height: 20rem;
     border: 1px solid #ccc;
     background: rgba(255, 255, 255, 0.4);
     text-align: center;
@@ -137,27 +139,27 @@ $shadows-large: multiple-bow-shadow(100);
   }
 
   .face1 {
-    transform: translateZ(100px);
+    transform: translateZ(10rem);
     color: #dd0031;
   }
   .face2 {
-    transform: rotateY(90deg) translateZ(100px);
+    transform: rotateY(90deg) translateZ(10rem);
     color: #f06529;
   }
   .face3 {
-    transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+    transform: rotateY(90deg) rotateX(90deg) translateZ(10rem);
     color: #28a4d9;
   }
   .face4 {
-    transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(10rem);
     color: #5ed4f4;
   }
   .face5 {
-    transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(10rem);
     color: #efd81d;
   }
   .face6 {
-    transform: rotateX(-90deg) translateZ(100px);
+    transform: rotateX(-90deg) translateZ(10rem);
     color: #ec4d28;
   }
 }
@@ -189,6 +191,6 @@ $shadows-large: multiple-bow-shadow(100);
     transform: translateY(0px)
   }
   to {		
-    transform: translateY(-2000px)
+    transform: translateY(-200rem)
   }
 }
