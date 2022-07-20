@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters';
 import { RoughNotation } from 'react-rough-notation';
 import './index.scss';
-// import HeadShot from '../HeadShot';
+import HeadShot from '../HeadShot';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const firstLine = ['H', 'i', ',']
@@ -15,9 +17,6 @@ const Home = () => {
 
   return (
     <div className='container home-page'>
-      <div className='hint'>
-        Hover over the sidebar to check out other pages
-      </div>
       <div className='text-zone'>
         <h1>
           <AnimatedLetters strArray={firstLine} delay={4} />
@@ -38,11 +37,15 @@ const Home = () => {
           </RoughNotation>
         </h1>
         <h2>
-          Student / Programmer / Inventor
+          Student / Programmer / Inventor <br/> <br/>
+          <div className='hint'>
+            <FontAwesomeIcon icon={faArrowLeft} /> 
+            &nbsp;Hover over the sidebar to find out more
+          </div>
         </h2>
         <Link to='/contact' className='flat-button'>CONTACT ME</Link>
       </div>
-      {/* <HeadShot /> */}
+      <HeadShot />
     </div>
   )
 }

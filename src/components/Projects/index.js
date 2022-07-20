@@ -1,16 +1,41 @@
+import { AnimatePresence, motion } from 'framer-motion';
+
+import { useState } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
 
+const projects = [
+  {title: 'Test', subtitle: 'Subtitle'}
+]
+
 const Projects = () => {
+  const [selectedId, setSelectedId] = useState(null)
+
   return (
     <div className='container projects-page'>
       <div className='text-zone'>
         <h1>
         <AnimatedLetters strArray={['C', 'u', 'r', 'r', 'e', 'n', 't', ' ', 'P', 'r', 'o', 'j', 'e', 'c', 't', 's']} delay={4}/>
         </h1>
-        <p>
-          Oops! This page is still a work in progress
-        </p>
+          <div className='project-cont'>
+          {
+            projects.map(project => (
+              <motion.div layoutId={project.id} onClick={() => setSelectedId(project.id)}>
+                <motion.h5>{project.subtitle}</motion.h5>
+                <motion.h2>{project.title}</motion.h2>
+              </motion.div>
+            ))
+          }
+          <AnimatePresence>
+            {selectedId && (
+              <motion.div layoutId={selectedId}>
+                {/* <motion.h5>{project.subtitle}</motion.h5>
+                <motion.h2>{project.title}</motion.h2> */}
+                <motion.button onClick={() => setSelectedId(null)} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   )

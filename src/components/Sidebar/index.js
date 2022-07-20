@@ -41,7 +41,7 @@ const Sidebar = () => {
       [
         ['/', <FontAwesomeIcon icon={faJsSquare}/>, 'Home'],
         ['/about', <FontAwesomeIcon icon={faJsSquare}/>, 'About'],
-        ['/projects', <FontAwesomeIcon icon={faJsSquare}/>, 'Projects'],
+        // ['/projects', <FontAwesomeIcon icon={faJsSquare}/>, 'Projects'],
         ['/experience', <FontAwesomeIcon icon={faJsSquare}/>, 'Experience'],
         ['/contact', <FontAwesomeIcon icon={faJsSquare}/>, 'Contact']
       ]
@@ -111,6 +111,9 @@ const Sidebar = () => {
           <FontAwesomeIcon icon={faPlugCirclePlus} color='#fff' />
           <span> </span>
           Plugins
+        </div>
+        <div>
+          <span style={{marginLeft: 10, color: 'white'}}> Oops! This feature is <br/> coming soon. </span>
         </div>
       </nav>
     </div>
