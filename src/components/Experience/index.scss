@@ -1,10 +1,9 @@
-
 $content-width: calc(40vw - 84px);
-$margin: 20px;
-$spacing: 20px;
-$bdrs: 6px;
-$circle-size: 40px;
-$icon-size: 32px;
+$margin: 2rem;
+$spacing: 2rem;
+$bdrs: .6rem;
+$circle-size: 4rem;
+$icon-size: 3.2rem;
 $bdrs-icon: 100%;
 
 $color1: #57467B;
@@ -37,7 +36,7 @@ $color10: #FF4141;
     height: 80vh;
     font-size: 17px;
     box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
-    transition: all 0.13s ease-in;
+    transition: all 0.2s ease-in;
 
     background: #C1AD7C;
 
@@ -51,105 +50,102 @@ $color10: #FF4141;
       margin: -3px;
       z-index: -10;
       border: solid 3px black;
-      opacity: 0.5;
 
       background: repeating-linear-gradient(
         45deg,
       #606dbc,
-      #606dbc 10px,
-      #465298 10px,
-      #465298 20px
+      #606dbc 1rem,
+      #465298 1rem,
+      #465298 2rem,
       );
     }
 
     .border {
       position: absolute;
-      transition: all 0.13s ease-in;
       color: black;
       
       &:before {
         color: #66C7F4;
-        font-size: 15px;
+        font-size: 1.5rem;
         position: absolute;
       }
 
       &:after {
         color: #66C7F4;
-        font-size: 15px;
+        font-size: 1.5rem;
         position: absolute;
       }
     }
 
     .tl {
-      position: absolute;
-      left: -50px;
-      top: -63px;
+      left: -5rem;
+      top: -5rem;
       font-weight: 600;
 
       &:before {
         content: "37px";
-        left: 120px;
-        top: 30px;
+        left: 5.5rem;
+        top: 2.2rem;
       }
       
       &:after {
         content: "140px";
-        left: 0px;
-        top: 80px;
+        left: 0;
+        top: 6rem;
       }
     }
 
     .tr {
-      right: -50px;
-      top: -63px;
+      right: -5rem;
+      top: -5rem;
       font-weight: 600;
 
       &:before {
         content: "23px";
-        left: 0;
-        top: 30px;
+        left: 1rem;
+        top: 2.2rem;
       }
 
       &:after {
         content: "130px";
-        right: -10px;
-        top: 80px;
+        right: 0;
+        top: 6rem;
       }
     }
 
     .bl {
-      left: -50px;
-      bottom: -71px;
+      left: -5rem;
+      bottom: -5rem;
       font-weight: 600;
 
       &:before {
         content: "110px";
-        left: 120px;
-        top: -30px;
+        left: 7rem;
+        top: -2rem;
       }
 
       &:after {
         content: "19px";
-        left: 0px;
-        top: -90px;
+        left: 0;
+        top: -4rem;
       }
     }
 
     .br {
-      right: -50px;
-      bottom: -63px;
+      right: -5rem;
+      bottom: -5rem;
       font-weight: 600;
 
       &:before {
         content: "120px";
-        left: 0;
-        top: -30px;
+        left: 3rem;
+        top: -2rem;
       }
 
       &:after {
         content: "24px";
-        right: -10px;
-        top: -80px;
+        right: 0;
+        top: -5rem;
       }
     }
   }

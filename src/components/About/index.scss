@@ -60,8 +60,8 @@ $shadows-medium: multiple-bow-shadow(200);
 $shadows-large: multiple-bow-shadow(100);
 
 #stars {
-  width: 1px;
-  height: 1px;
+  width: .1rem;
+  height: .1rem;
   background: transparent;
   box-shadow: $shadows-small;
 
@@ -70,16 +70,16 @@ $shadows-large: multiple-bow-shadow(100);
     content: " ";
     position: absolute;
     top: 200vh;
-    width: 1px;
-    height: 1px;
+    width: .1rem;
+    height: .1rem;
     background: transparent;
     box-shadow: $shadows-small;
   }
 }
 
 #stars2 {
-  width: 2px;
-  height: 2px;
+  width: .2rem;
+  height: .2rem;
   background: transparent;
   box-shadow: $shadows-medium;
 
@@ -88,16 +88,16 @@ $shadows-large: multiple-bow-shadow(100);
     content: " ";
     position: absolute;
     top: 200vh;
-    width: 2px;
-    height: 2px;
+    width: .2rem;
+    height: .2rem;
     background: transparent;
     box-shadow: $shadows-medium;
   }
 }
 
 #stars3 {
-  width: 3px;
-  height: 3px;
+  width: .3rem;
+  height: .3rem;
   background: transparent;
   box-shadow: $shadows-large;
 
@@ -106,8 +106,8 @@ $shadows-large: multiple-bow-shadow(100);
     content: " ";
     position: absolute;
     top: 200vh;
-    width: 3px;
-    height: 3px;
+    width: .3rem;
+    height: .3rem;
     background: transparent;
     box-shadow: $shadows-large;
   }
@@ -131,7 +131,7 @@ $shadows-large: multiple-bow-shadow(100);
     border: 1px solid #ccc;
     background: rgba(255, 255, 255, 0.4);
     text-align: center;
-    font-size: 100px;
+    font-size: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -188,7 +188,7 @@ $shadows-large: multiple-bow-shadow(100);
 
 @keyframes animStar {
   from {
-    transform: translateY(0px)
+    transform: translateY(0)
   }
   to {		
     transform: translateY(-200rem)

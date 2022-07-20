@@ -5,9 +5,10 @@
   background: #2C1320;
   height: 100%;
   position: absolute;
+  display: flex;
+  justify-content: center;
   top: 0;
   z-index: 3;
-  min-height: 500px;
   overflow-x: hidden;
   white-space: nowrap;
 
@@ -15,40 +16,40 @@
   transition: width css_variables.$nav-bar-transition-duration ease-in-out;
 
   .label {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 164px;
-    width: 50px;
-    margin-top: -82px;
-    margin-left: -22px;
+    width: 100%;
+    height: fit-content;
+
+    align-self: center;
 
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     
     font-family: 'La Belle Aurore', cursive;
-    font-size: 35px;
+    font-size: 3.5rem;
     color: #ffd700;
     opacity: 0.6;
   }
 
   nav {
-    display: block;
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
     position: absolute;
     width: 100%;
 
     font-family: Consola;
-    font-size: 16px;
+    font-size: 1.6rem;
 
     .title {
-      font-size: 20px;
-      margin: 10px 10px 5px 10px;
+      width: 100%;
+      font-size: 2.1rem;
+      margin: 1rem 1rem .5rem 1rem;
       color: #aaa;
     }
 
     .directory {
-      margin-left: 20px;
+      width: 100%;
+      margin-left: 1.8rem; 
       color: #aaa;
       cursor: pointer;
 
@@ -66,7 +67,8 @@
     }
 
     .files {
-      margin-left: 24px;
+      width: 100%;
+      margin-left: 2.4rem;
       transition: all 0.1s linear;
       overflow-x: hidden;
 

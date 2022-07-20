@@ -113,7 +113,7 @@ const Sidebar = () => {
           Plugins
         </div>
         <div>
-          <span style={{marginLeft: 10, color: 'white'}}> Oops! This feature is <br/> coming soon. </span>
+          <span style={{color: 'white'}}>Oops! This feature is <br/>coming soon. </span>
         </div>
       </nav>
     </div>
